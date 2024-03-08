@@ -1,49 +1,45 @@
-# Project Name
+# Machine Learning for Chemistry
 
-#### -- Project Status: [Active, On-Hold, Completed]
+#### -- Project Status: Active
 
 ## Project Intro/Objective
-The purpose of this project is ________. (Describe the main goals of the project and potential civic impact. Limit to a short paragraph, 3-6 Sentences)
+This task is to get familiar with Machine Learning for chemistry data, which is going to be the focus of the internship. The Ersilia Model Hub contains about 150 models, which predict several properties of small molecules (bioactivity against pathogens, ADME properties, toxicity…). We want to make sure those models are accurate and reproducible.
 
 ### Collaborators
-|Name     |  Github Page   |  Personal Website  |
+|Name     |  Github Page   |  LinkedIn Prodfile  |
 |---------|-----------------|--------------------|
-|Misha Berrien | [mishaberrien](https://github.com/mishaberrien)| [www.mishaberrien.com](https://mishaberrien.com/)  |
+|Alphonse | [AlphonseBrandon](https://github.com/AlphonseBrandon)| [LinkedIn](www.linkedin.com/in/alphonsebrandon)  |
 
 ### Methods Used
-* Inferential Statistics
 * Machine Learning
 * Data Visualization
 * Predictive Modeling
-* etc.
 
 ### Technologies
-* R
 * Python
-* D3
-* PostGres, MySql
-* Pandas, jupyter
-* HTML
-* JavaScript
-* etc.
+* Jupyter
+* Pandas
+* Numpy
+* Scikit-learn
+* Matplotlib
 
 ## Project Description
-(Provide more detailed overview of the project.  Talk a bit about your data sources and what questions and hypothesis you are exploring. What specific data analysis/visualization and modelling work are you using to solve the problem? What blockers and challenges are you facing?  Feel free to number or bullet point things here)
+We focus on validating the models in three steps:
 
+* T1 Model bias (i.e: models giving very high values or low values): to check that, we only need to run predictions for a list of 1000 diverse molecules in each model and plot the results in a scatter plot.
+
+* T2 Reproducibility: can we reproduce the exact values / a figure / that authors obtained when training the model in the first place? This means we need to read the publication and identify for example a compound identified using that model and check that we obtain the same values.
+
+* T3 Performance: can we check if the model gives accurate results in external datasets? This is more time consuming and will be done by identifying a public dataset that has not been used in model training, and running predictions to build AUROC curves - to simplify reports, we will only focus on AUROC or R2 as metrics now.
 
 ## Getting Started
 
 1. Clone this repo (for help see this [tutorial](https://help.github.com/articles/cloning-a-repository/)).
-2. Raw Data is being kept [here](Repo folder containing raw data) within this repo.
-3. Data processing/transformation scripts are being kept [here](Repo folder containing data processing scripts/notebooks)
-4. etc...
-5. Follow setup [instructions](Link to file)
+2. Raw Data is being kept [here](data/01_raw) within this repo.
+3. Data processing/transformation notebook is being kept [here](notebooks/01_processing/ra-score-prediction-model.ipynb)
+4. Run this [setup.sh](setup.sh) bash script in a bash terminal to automatically set up your environment with the necessary packages with the command `bash setup.sh` or manually install the required packages using the `requirements.txt` file.
 
 ## Featured Notebooks/Analysis/Deliverables
-* [Notebook/Markdown/Slide Deck Title](#)
-* [Notebook/Markdown/Slide DeckTitle](#)
-* [Blog Post](#)
+* [ra-score-prediction-model.ipynb](notebooks/01_processing/ra-score-prediction-model.ipynb)
 
 ---
-
-This file structure is based on the [DSSG machine learning pipeline](https://github.com/dssg/hitchhikers-guide/tree/master/sources/curriculum/0_before_you_start/pipelines-and-project-workflow).
